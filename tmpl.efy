@@ -24,16 +24,11 @@ break
 return
 typedef
 struct
-union
 static
-auto
 const
-extern
 signed
 unsigned
-restrict
 inline
-volatile
 goto
 (
 )
