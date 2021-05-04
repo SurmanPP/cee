@@ -35,3 +35,8 @@
 #define eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee {
 #define eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee }
 #define eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ;
+#define E union
+#define Ee auto
+#define Eee extern
+#define Eeee restrict
+#define Eeeee volatile

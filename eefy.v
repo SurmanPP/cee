@@ -7,13 +7,23 @@ fn print_usage() {
 }
 
 fn eefy(input []string) string {
-	mut output := ''
+	mut output := []string{}
 	mut e := ''
+	mut big_e := 0
 	for keyword in input {
-		e += 'e'
-		output += '#define $e $keyword\n'
+		if e.len >= 37 {
+			big_e++
+			e = ''
+		}
+		if big_e <= e.len {
+			e += 'e'
+			output << '#define $e $keyword\n'
+			continue
+		}
+		e += 'E'
+		output << '#define $e $keyword\n'
 	}
-	return output
+	return output.join('')
 }
 
 fn main() {
