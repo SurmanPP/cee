@@ -1,2 +1,2 @@
 # cee
-Use eefy to generate a macros header like the cee.h generated from tmpl.efy
+Cee is a macro language for c. It can be generated from a file conatining keywords and symbols line by line. The generated c header contains the macros. The macro name conatin only small and big Es how much es a macro has is set by the position in the input file. For that process the ceefy.v is used it is written in [v](vlang.io). The commandline options are -o to set the output file and -s to print into the stdout. The first argument is the input file. Piping also works and is prefered over the file. The tmpl.cefy in this repo is used to generat the cee.h with the ceefy tool. The e.c is an example of the language.
