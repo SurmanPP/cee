@@ -44,12 +44,11 @@ fn write(cmd cli.Command, input string) ? {
 		return
 	}
 	if cmd.flags.get_string('output') ? != '' {
-		if cmd.args.len < 1 {
-			writ_file('${string(4)}.h')
-			return
-		}
-		write_file(cmd.args[0].trim_suffix('.cefy').add('.h'), input)
+		flag := cmd.flags.get_string('output') ?
+		os.write_file('$flag', input)
+		return
 	}
+	os.write_file(cmd.args[0].trim_suffix('.cefy').add('.h'), input)
 }
 
 fn main() {
