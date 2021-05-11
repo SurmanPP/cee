@@ -45,10 +45,10 @@ fn write(cmd cli.Command, input string) ? {
 	}
 	if cmd.flags.get_string('output') ? != '' {
 		flag := cmd.flags.get_string('output') ?
-		os.write_file('$flag', input)
+		os.write_file('$flag', input) ?
 		return
 	}
-	os.write_file(cmd.args[0].trim_suffix('.cefy').add('.h'), input)
+	os.write_file(cmd.args[0].trim_suffix('.cefy').add('.h'), input) ?
 }
 
 fn main() {
