@@ -4,8 +4,7 @@ Cee is a macro language for c. It can be generated from a file conatining keywor
 Run
 ```sh
 make build
-```
-.\
+```.
 The script make script just runs
 ```sh
 v -prod -o ./build/ceefy ./ceefy/
@@ -17,8 +16,7 @@ to build ceefy, then it creates the header with
 and finally builds the example with the command
 ```sh
 gcc -I./include -O3 ./example/e.c
-```
-.\
+```.
 It can be installed by running
 ```sh
 make install
