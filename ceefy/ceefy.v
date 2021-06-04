@@ -16,12 +16,12 @@ fn header_from_keywords(ikeywords []string) string {
 	mut last := ''
 	for mut line in keywords {
 		if last_escaped {
-			line = line.add(last)
+			line = *line + last
 			last_escaped = false
 		}
 		if line.ends_with('\\') {
 			last_escaped = true
-			last = '$line'
+			last = line
 			continue
 		}
 		if e.len >= max_name_len {
@@ -48,14 +48,13 @@ fn write(cmd cli.Command, input string) ? {
 		os.write_file('$flag', input) ?
 		return
 	}
-	os.write_file(cmd.args[0].trim_suffix('.cefy').add('.h'), input) ?
+	os.write_file(cmd.args[0].trim_suffix('.cefy') + '.h', input) ?
 }
 
 fn main() {
 	mut command := cli.Command{
 		name: 'ceefy'
 		description: 'ceefy your code'
-		usage: 'ceefy [OPTIONS] <input>'
 		version: '2.0.1'
 		execute: fn (cmd cli.Command) ? {
 			if cmd.args.len > 1 {
